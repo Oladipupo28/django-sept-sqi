@@ -1,24 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Freelancer Portfolio{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li>Home Page</li>
-                <li>Services</li>
-                <li>Testimonials</li>
-                <li>Pricing</li>
-                <li>Case Studies</li>
-                <li>Blog</li>
-
-            </ul>
-        </nav>
-    </header>
+   {% include "./footer.html" %}
 
     <main>
     {% block body %}
@@ -26,8 +17,8 @@
     {% endblock  %}
     </main>
 
-    <footer>
-    <p>&copy; 2024 Freelancer Portfolio</p>
-    </footer>
+    {% include "./footer.html" %}
+
+     <script src="{% static 'js/demo.js' %}"></script>
 </body>
 </html>
