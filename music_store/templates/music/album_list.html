@@ -1,0 +1,6 @@
+<h1>Album Listing</h1>
+<ul>
+<p>{% for album in albums %}
+<li>{{ album.title }} - Released on {{ album.released_date }} (Artist: {{ album.artist.name }})</li>
+{% endfor %}</p>
+</ul>
