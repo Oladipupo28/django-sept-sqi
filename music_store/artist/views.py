@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Artist
 from album.models import Album
-
+from django.http import HttpResponseNotFound
 # Create your views here.
 def home(request):
     return render(request, 'music/home.html')
@@ -19,5 +19,12 @@ def album_list(request):
     #     'all_the_artists': the_artists,
     #     'all_the_albums': the_albums
 # }
+def artist_detail(request, artist_id):
+    artist = get_object_or_404(Artist, pk=artist_id)
+    context = {"artist": artist}
+    return render(request, 'music/artist_detail.html', context)
 
-
+def album_detail(request, artist_id):
+    album = get_object_or_404(Album, pk=artist_id)
+    context = {"album": album}
+    return render(request, 'music/album_detail.html', context)

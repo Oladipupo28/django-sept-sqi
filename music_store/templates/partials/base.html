@@ -11,9 +11,9 @@
     <header>
         <nav>
             <ul>
-                <li>Home Page</li>
-                <li>Artist</li>
-                <li>Album</li>
+                <li><a href="{% url 'artist:home' %}">Home</a></li>
+                <li><a href="{% url 'artist:album_list' %}">Album</a></li>
+                <li><a href="{% url 'artist:artist_list' %}">Artist</a></li>
             </ul>
         </nav>
     </header>

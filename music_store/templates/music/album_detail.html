@@ -1,0 +1,14 @@
+{% extends "partials/base.html" %}
+
+{% block titile %}{{ album.title}}{% endblock titile %}
+
+{% block body %}
+Title: {{ album.title }}
+Artist: {{ album.artist }}
+released_date: {{ album.released_date}}
+{% if album.cover_image %}
+<img src="{{ artist.cover_image.url }}" alt="Album cover image">
+{% else %}
+<p>No image for {{ album.title }}</p>
+{% endif %}
+{% endblock body %}
