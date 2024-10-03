@@ -1,0 +1,16 @@
+<h1>{{ movie.title }}</h1>
+
+<p>director: {{ movie.director}}</p>
+<p>Release Date: {{ movie.release_date }}</p>
+<p>Genre: {{ movie.get_genre_display }}</p>
+<p>Description: {{ movie.description }}</p>
+
+{% if movie.poster %}
+    <img src="{{ movie.poster.url }}" alt="{{ movie.title }} poster">
+{% else %}
+<a href="{% url 'movie_edit' movie.pk %}">Edit</a>  
+<form action="{% url 'movie_delete' movie.book_id%}" method="POST">
+{% csrf_token %}
+<button type=""submit>Delete</button>
+</form>
+
